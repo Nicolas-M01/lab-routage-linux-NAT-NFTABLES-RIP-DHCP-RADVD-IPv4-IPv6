@@ -35,7 +35,7 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
 ## Schéma synoptique du lab :
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7c8d8a13-02c6-4202-a59a-789e32411e77">
+  <img src="https://github.com/user-attachments/assets/5bbe9964-2f54-4747-979a-a7e1e963e271">
 </p>
 
 ## Outils du lab :

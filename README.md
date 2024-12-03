@@ -78,7 +78,7 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
 	`net.ipv4.ip_forward=1` et `net.ipv6.conf.all.forwarding=1`
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/8ffb96b9-5d8e-44f1-b549-e3364b54dbf9">
+  <img src="https://github.com/user-attachments/assets/a0cb14f9-0cca-496f-b3d5-2e4edb0abbbc">
 </p>
 
 - Quitter le fichier en sauvegardant : `Ctrl+x` puis `y`
@@ -96,21 +96,21 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
    - Sauvegarder cette table pour le NAT :  
      	`nft list table ip table_NAT > table_NAT.nft`
 <p align="center">
- 		<img src="https://github.com/user-attachments/assets/2578fa0f-6907-4fd5-babc-bd441abaf380">
+ 		<img src="https://github.com/user-attachments/assets/e79556b0-d306-49f3-9c3a-28cd66f75bcc">
 </p>
 
 **4 - Configuration des interfaces réseaux sur R-EDGE et activation de la règle NAT au démarrage :**
 
 - Dans le fichier `nano /etc/network/interfaces` de R-EDGE, chargement de la règle NAT et configuration de la 2ème carte réseau :
 <p align="center">
- 		<img src="https://github.com/user-attachments/assets/162d7f62-f729-4000-a9eb-fa454f2ceeca">
+ 		<img src="https://github.com/user-attachments/assets/f2ad6496-2bf2-43a9-b848-3ae4e4ddcb97">
 </p>
 
 **5 - Configuration des interfaces réseaux sur R-INTER :**
 
 - Dans le fichier `nano /etc/network/interfaces` de R-INTER, configuration des cartes réseaux :
 	<p align="center">
- 		<img src="https://github.com/user-attachments/assets/fc529b95-50fa-43e2-a0d8-56f601799a45">
+ 		<img src="https://github.com/user-attachments/assets/f19d8fd0-39de-407f-9277-5d4159c9cf2b">
 	</p>
 
  `To be continued...`

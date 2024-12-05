@@ -138,6 +138,6 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
 
 ## FAQ :
 	- Hey toi là ! Mot de passe ?
- 	- Un pantin voulait acheté une trompette à un lama mais le lama ne comprenait pas ce que disait le pantin. Il demanda au pantin de parler un peu plus fort. Le lama lui donna alors une citrouille. Mais le pantin voulait une trompette et le répéta au lama. Le lama lui donna une statue. Le pantin devint complétement, il insulta le lama et le frappa. Maintenant le lama est mort.
+ 	- Un pantin voulait acheté une trompette à un lama mais le lama ne comprenait pas ce que disait le pantin. Il demanda au pantin de parler un peu plus fort. Le lama lui donna alors une citrouille. Mais le pantin voulait une trompette et le répéta au lama. Le lama lui donna une statue. Le pantin devint complétement fou, il insulta le lama et le frappa. Maintenant le lama est mort.
   	- C'est quoi ça ?
    	- Bah c'est le mot de passe.

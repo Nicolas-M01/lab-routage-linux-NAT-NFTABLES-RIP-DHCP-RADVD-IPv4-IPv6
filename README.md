@@ -26,8 +26,8 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
 - [x] Configuration des régles NAT avec nftables sur R-EDGE
 - [x] Configuration des interfaces réseaux sur R-EDGE
 - [x] Configuration des interfaces réseaux sur R-INTER
-- [x] Configuration des routes sur R-EDGE
-- [ ] Installation et configuration du protocole RIP
+- [x] Configuration du routage dynamique
+- [x] Implémentation et configuration du protocole RIP avec FRRouting
 - [ ] Installation et configuration d'un serveur DHCP (R-INTER)
 - [ ] Installation et configuration de radvd (R-INTER)
 - [ ] Configuration IPv6
@@ -40,13 +40,12 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
 
 ## Outils du lab :
 
-**[VirtualBox (7.0.22)](https://www.virtualbox.org/)**
-
-**[drawio-desktop (v24.7.17)](https://github.com/jgraph/drawio-desktop)**
-
-**[debian (12.8.0)](https://www.debian.org/)**
-
-**[Windows 10](https://www.microsoft.com/en-us/software-download)**
+[VirtualBox (7.0.22)](https://www.virtualbox.org/)  
+[drawio-desktop (v24.7.17)](https://github.com/jgraph/drawio-desktop)  
+[debian (12.8.0)](https://www.debian.org/)  
+[nftables](https://nftables.org/)  
+[FRRouting Project](https://frrouting.org/)  
+[Windows 10](https://www.microsoft.com/en-us/software-download)
 
 ## Spécifications techniques du lab :
 
@@ -106,14 +105,39 @@ Mise en place d'une infrastructure système et réseau composée des éléments 
  		<img src="https://github.com/user-attachments/assets/f2ad6496-2bf2-43a9-b848-3ae4e4ddcb97">
 </p>
 
-**5 - Configuration des interfaces réseaux sur R-INTER :**
-
+**5 - Configuration des interfaces réseaux sur R-INTER :**  
 - Dans le fichier `nano /etc/network/interfaces` de R-INTER, configuration des cartes réseaux :
-	<p align="center">
- 		<img src="https://github.com/user-attachments/assets/f19d8fd0-39de-407f-9277-5d4159c9cf2b">
-	</p>
+ 
+<p align="center">
+<img src="https://github.com/user-attachments/assets/f19d8fd0-39de-407f-9277-5d4159c9cf2b">
+</p>
+
+  **6 - Implémentation et configuration du protocole RIP avec FRRouting dans R-INTER :**  
+- Installation de l'outil FRRouting avec la commande : `apt install frr`
+- Dans le fichier `/etc/frr/daemons` activer le protocole RIP : `ripd=yes`
+- Dans le fichier `/etc/frr/frr.conf` configurer le protocole RIP puis redémarrer le service frr.service avec la commande : `systemctl restart frr.service` :
+<p align="center">
+<img src="https://github.com/user-attachments/assets/6d08967a-a5ac-4933-bcf5-253f8ac44367">
+</p>
+ 
+ **7 - Implémentation et configuration du protocole RIP avec FRRouting dans R-EDGE :**  
+- Installation de l'outil FRRouting avec la commande : `apt install frr`
+- Dans le fichier `/etc/frr/daemons` activer le protocole RIP : `ripd=yes`
+- Dans le fichier `/etc/frr/frr.conf` configurer le protocole RIP puis redémarrer le service frr.service avec la commande : `systemctl restart frr.service` :
+<p align="center">
+<img src="https://github.com/user-attachments/assets/1d938c23-fa77-42f2-8a03-c5752f081d1c">
+</p>
+
+ **8 - Vérification du partage des routes de R-INTER à R-EDGE**
+
+ - Vérication directe depuis R-EDGE : `ip route`
+ - Vérification depuis le shell de configuration de FRRouting : `show ip rip` ou en dehors du shell `vtysh -c "show ip rip"`
+ - Vérification depuis le shell de configuration de FRRouting des routers voisins : `show ip neigh` ou en dehors du shell `vtysh -c "show ip neigh"`
 
  `To be continued...`
 
 ## FAQ :
-	- T'es de la police ? Rien à déclarer !
+	- Hey toi là ! Mot de passe ?
+ 	- Un pantin voulait acheté une trompette à un lama mais le lama ne comprenait pas ce que disait le pantin. Il demanda au pantin de parler un peu plus fort. Le lama lui donna alors une citrouille. Mais le pantin voulait une trompette et le répéta au lama. Le lama lui donna une statue. Le pantin devint complétement, il insulta le lama et le frappa. Maintenant le lama est mort.
+  	- C'est quoi ça ?
+   	- Bah c'est le mot de passe.
